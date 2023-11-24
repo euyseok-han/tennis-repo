@@ -1,0 +1,12 @@
+<ul>
+    <li>Title: {{post.title}}</li>
+    <li>Posted by: {{post.user.username}}</li>
+    <li>Date: {{post.game_date|date:"Y-m-d"}}</li>
+    <li>Place: {{post.game_spot.name}}</li>
+    <li>Game type: {{post.game_type}}</li>
+    {% if post.content%}
+    <hr>
+    <li>코멘트: {{post.content}} </li>
+
+    {% endif %}
+</ul>
