@@ -25,3 +25,7 @@ up-dependencies-only:
 
 .PHONY: update
 update: install migrate ;
+
+.PHONY: test
+test:
+	poetry run pytest ./core -v -rs -n auto --show-capture=no

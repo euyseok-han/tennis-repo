@@ -16,9 +16,7 @@ if not LOCAL_SETTINGS_PATH:
 if not os.path.isabs(LOCAL_SETTINGS_PATH):
     LOCAL_SETTINGS_PATH = os.path.join(BASE_DIR, LOCAL_SETTINGS_PATH)
 
-print('start!')
 from django.conf import settings
-print(settings.DEBUG)
 
 include(
     'base.py',

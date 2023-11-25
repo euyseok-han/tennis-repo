@@ -1,5 +1,5 @@
-from core.core.utils.collections import deep_update
-from core.core.utils.settings import get_settings_from_environment
+from core.core_utils.utils.collections import deep_update
+from core.core_utils.utils.settings import get_settings_from_environment
 """
 """
 # globals() is a dictionary of global variables
