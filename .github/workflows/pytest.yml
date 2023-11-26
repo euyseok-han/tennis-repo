@@ -26,6 +26,5 @@ jobs:
     - name: Test
       run: make test
       env:
-        CORE_SETTINGS_DATABASES: '{"default": {"HOST":"db"}}'
+        CORE_SETTINGS_DATABASES: '{"default": {"HOST":"db","PORT": "5432"}}'
         CORE_SETTINGS_LOCAL_SETTINGS_PATH: './core/project/settings/template/settings.github.py'
-        CORE_SETTINGS_PORT: '5432'
