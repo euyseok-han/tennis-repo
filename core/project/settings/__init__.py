@@ -8,7 +8,7 @@ from core.core_utils.utils.pytest import is_pytest_running
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 
 # Namespacing our own custom environment variables
-ENVVAR_SETTINGS_PREFIX = 'CORESETTINGS_'
+ENVVAR_SETTINGS_PREFIX = 'CORE_SETTINGS_'
 
 LOCAL_SETTINGS_PATH = os.getenv(f'{ENVVAR_SETTINGS_PREFIX}LOCAL_SETTINGS_PATH')
 

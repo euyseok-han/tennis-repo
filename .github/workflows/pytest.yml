@@ -3,7 +3,7 @@ name: Quality Assurance
 on: [pull_request, workflow_call]
 
 jobs:
-  quality-assuance:
+  quality-assurance:
     name: Quality Assurance
     runs-on: ubuntu-latest
     container: python:3.10.4-buster
@@ -23,15 +23,12 @@ jobs:
         poetry-version: 1.4.2
     - name: Install Dependencies
       run: make install && make install-pre-commit
-#    - name: Lint
-#      run: make lint
-
     - name: Test
       run: make test
       env:
-        CORESETTINGS_DATABASES: '{"default": {"HOST":"db"}}'
-        CORESETTINGS_LOCAL_SETTINGS_PATH: './core/project/settings/template/settings.github.py'
-        CORESETTINGS_PORT: '5432',
+        CORE_SETTINGS_DATABASES: '{"default": {"HOST":"db"}}'
+        CORE_SETTINGS_LOCAL_SETTINGS_PATH: './core/project/settings/template/settings.github.py'
+        CORE_SETTINGS_PORT: '5432',
 
 #
 #    - name: Set up Python ${{ matrix.python-version }}

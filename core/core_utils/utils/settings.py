@@ -5,7 +5,7 @@ from .misc import yaml_coerce
 
 def get_settings_from_environment(prefix):
     """
-    'CORESETTINGS_IN_DOCKER = 1'
+    'CORE_SETTINGS_IN_DOCKER = 1'
     {
         'IN_DOCKER: 1
     }
