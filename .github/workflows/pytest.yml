@@ -30,7 +30,7 @@ jobs:
       env:
         CORESETTINGS_DATABASES: '{"default": {"HOST":"db"}}'
         CORESETTINGS_LOCAL_SETTINGS_PATH: './core/project/settings/template/settings.github.py'
-        'CORESETTINGS_PORT': '5432',
+        CORESETTINGS_PORT: '5432',
 #
 #    - name: Set up Python ${{ matrix.python-version }}
 #      uses: actions/setup-python@v3
