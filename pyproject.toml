@@ -5,7 +5,7 @@ description = ""
 authors = ["euyseok-han <euyseok.han@wesang.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "tennis_repo"}]
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
