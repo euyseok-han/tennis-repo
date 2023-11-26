@@ -17,7 +17,11 @@ if not LOCAL_SETTINGS_PATH:
 
 if not os.path.isabs(LOCAL_SETTINGS_PATH):
     print("go to if statement")
-    LOCAL_SETTINGS_PATH = str(BASE_DIR) + '/' + LOCAL_SETTINGS_PATH
+    if 'prod' in LOCAL_SETTINGS_PATH:
+        LOCAL_SETTINGS_PATH = '/opt/project/' + LOCAL_SETTINGS_PATH
+    else:
+        LOCAL_SETTINGS_PATH = str(BASE_DIR / LOCAL_SETTINGS_PATH)
+
 
 include(
     'base.py',
@@ -26,7 +30,7 @@ include(
     'envvars.py',
     'docker.py',
 )
-print(BASE_DIR)
-print(LOCAL_SETTINGS_PATH)
+print('basedir', BASE_DIR)
+print('local',LOCAL_SETTINGS_PATH)
 if not is_pytest_running():
     assert SECRET_KEY is not NotImplemented  # type: ignore
