@@ -18,8 +18,6 @@ if not LOCAL_SETTINGS_PATH:
 if not os.path.isabs(LOCAL_SETTINGS_PATH):
     LOCAL_SETTINGS_PATH = os.path.join(BASE_DIR, LOCAL_SETTINGS_PATH)
 
-from django.conf import settings
-
 include(
     'base.py',
     'custom.py',
@@ -27,6 +25,7 @@ include(
     'envvars.py',
     'docker.py',
 )
-
+print(BASE_DIR)
+print(LOCAL_SETTINGS_PATH)
 if not is_pytest_running():
     assert SECRET_KEY is not NotImplemented  # type: ignore

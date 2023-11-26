@@ -22,8 +22,8 @@ services:
     depends_on:
       - db
     environment:
-      TENNIS_MATCH_SETTING_DATABASES: '{"default":{"HOST":"db"}}'
-      TENNIS_MATCH_SETTING_LOCAL_SETTINGS_PATH: 'local/settings.prod.py'
+      CORE_SETTINGS_DATABASES: '{"default":{"HOST":"db"}}'
+      CORE_SETTINGS_LOCAL_SETTINGS_PATH: 'local/settings.prod.py'
 
 volumes:
   postgresql-data:
