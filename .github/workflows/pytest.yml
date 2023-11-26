@@ -28,7 +28,7 @@ jobs:
     - name: Test
       run: make test
       env:
-        CORESETTINGS_DATABASES: '{"default": {"HOST":"db}}'
+        CORESETTINGS_DATABASES: '{"default": {"HOST":"db"}}'
         CORESETTINGS_LOCAL_SETTINGS_PATH: './core/project/settings/template/settings.github.py'
 #
 #    - name: Set up Python ${{ matrix.python-version }}
