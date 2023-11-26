@@ -38,5 +38,5 @@ jobs:
           END
       - name: Deploy
         run: |
-          ssh target "cd tennis_repo && docker-compose down && git pull && docker-compose build && docker-compose up -d --force-recreate
+          ssh target "cd tennis-repo && docker-compose down && git pull && docker-compose build && docker-compose up -d --force-recreate"
       
