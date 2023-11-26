@@ -16,6 +16,7 @@ if not LOCAL_SETTINGS_PATH:
     LOCAL_SETTINGS_PATH = f'local/settings{".unittests" if is_pytest_running() else ".dev"}.py'
 
 if not os.path.isabs(LOCAL_SETTINGS_PATH):
+    print("go to if statement")
     LOCAL_SETTINGS_PATH = str(BASE_DIR / LOCAL_SETTINGS_PATH)
 
 include(
@@ -25,7 +26,6 @@ include(
     'envvars.py',
     'docker.py',
 )
-print(Path(__file__).resolve())
 print(BASE_DIR)
 print(LOCAL_SETTINGS_PATH)
 if not is_pytest_running():
