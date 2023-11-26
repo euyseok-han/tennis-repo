@@ -17,7 +17,7 @@ if not LOCAL_SETTINGS_PATH:
 
 if not os.path.isabs(LOCAL_SETTINGS_PATH):
     print("go to if statement")
-    LOCAL_SETTINGS_PATH = BASE_DIR + '/' + LOCAL_SETTINGS_PATH
+    LOCAL_SETTINGS_PATH = str(BASE_DIR) + '/' + LOCAL_SETTINGS_PATH
 
 include(
     'base.py',
