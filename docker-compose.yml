@@ -6,7 +6,7 @@ services:
     image: postgres:14.2-alpine
     restart: unless-stopped
     ports:
-      - '54321:5432'
+      - '5432:5432'
     environment:
       POSTGRES_DB: tennis_match
       POSTGRES_USER: tennis_match
@@ -22,7 +22,7 @@ services:
     depends_on:
       - db
     environment:
-      CORE_SETTINGS_DATABASES: '{"default":{"HOST":"db"}}'
+      CORE_SETTINGS_DATABASES: '{"default":{"HOST":"db","PORT":"5432"}}'
       CORE_SETTINGS_LOCAL_SETTINGS_PATH: 'local/settings.prod.py'
 
 volumes:
