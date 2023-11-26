@@ -16,11 +16,7 @@ if not LOCAL_SETTINGS_PATH:
     LOCAL_SETTINGS_PATH = f'local/settings{".unittests" if is_pytest_running() else ".dev"}.py'
 
 if not os.path.isabs(LOCAL_SETTINGS_PATH):
-    print("go to if statement")
-    if 'prod' in LOCAL_SETTINGS_PATH:
-        LOCAL_SETTINGS_PATH = '/opt/project/' + LOCAL_SETTINGS_PATH
-    else:
-        LOCAL_SETTINGS_PATH = str(BASE_DIR / LOCAL_SETTINGS_PATH)
+    LOCAL_SETTINGS_PATH = str(BASE_DIR / LOCAL_SETTINGS_PATH)
 
 
 include(
