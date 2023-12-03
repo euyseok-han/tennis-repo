@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block content%}
+<html>
+    <body>
+        {% for message in messages %}
+            {% if  message.sender == request.user%}
+                <p style="text-align:right">{{ message.content }}</p>
+            {% else %}
+                <p style="text-align:left">{{ message.content }}</p>
+            {% endif %}
+        {% endfor %}
+        <br>
+        <br>
+        <form action="{% url 'match:conversation' post=post host=host guest=guest  %}" method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <label for="conversation">Message:</label><br>
+                <input type="text" id="conversation" name="content"><br>
+            <button id="target" type="submit" onclick="myFunction()">Write!</button>
+            </fieldset>
+        </form>
+
+        <a href = "{% url 'match:conversation_list' %}">Back to conversations list</a>
+    </body>
+</html>
+
+{% endblock content %}

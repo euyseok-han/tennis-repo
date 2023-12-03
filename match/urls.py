@@ -1,4 +1,5 @@
 from django.urls import path
+
 from . import views
 
 app_name = 'match'
@@ -9,5 +10,11 @@ urlpatterns = [
     path('confirm/', views.confirm, name='confirm'),
     path('', views.loginUser, name='login'),
     path('register/', views.register, name='register'),
-    path('logout/', views.logoutUser, name='logout')
+    path('logout/', views.logoutUser, name='logout'),
+    path('conversation/<int:post>/<int:host>/<int:guest>/',
+         views.conversation,
+         name='conversation'),
+    path('conversation/', views.conversation_list, name='conversation_list'),
+    path('profile/<int:pk>', views.user_profile, name='profile'),
+    path('update_user/', views.update_user, name='update_user')
 ]

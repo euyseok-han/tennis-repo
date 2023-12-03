@@ -1,3 +1,6 @@
+{% extends 'main.html' %}
+
+{% block content%}
 <ul>
     <li>Title: {{post.title}}</li>
     <li>Posted by: {{post.user.username}}</li>
@@ -8,5 +11,10 @@
     <hr>
     <li>코멘트: {{post.content}} </li>
 
+    {% endif %}
+    <hr>
+    {%  if post.user != request.user %}
+        {% csrf_token %}
+        <a href="{% url 'match:conversation' post=post.id host=post.user.id guest=request.user.id  %}">Let's send a message!</a>
     {% endif %}
 </ul>

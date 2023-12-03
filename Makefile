@@ -6,6 +6,10 @@ install:
 install-pre-commit:
 	poetry run pre-commit uninstall; poetry run pre-commit install
 
+.PHONY: shell
+shell:
+	poetry run python -m core.manage shell
+
 .PHONY: lint
 lint:
 	poetry run pre-commit run --all-files

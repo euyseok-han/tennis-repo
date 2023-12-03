@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block content%}
+<main class="profile-page layout layout--3">
+  <div class="container">
+
+      <div class="profile">
+        <div class="profile__avatar">
+          <div class="avatar avatar--large active">
+            <img src="{{request.user.avatar.url}}" />
+          </div>
+        </div>
+        <div class="profile__info">
+          <h3>{{user.username}}</h3>
+          <p>@{{user.username}}</p>
+          {% if request.user == user %}
+          <a href="{% url 'match:update_user' %}" class="btn btn--main btn--pill">Edit Profile</a>
+          {% endif %}
+        </div>
+        <div class="profile__about">
+          <h3>Bio</h3>
+          <p>
+            {{request.user.bio}}
+          </p>
+        </div>
+      </div>
+  </div>
+</main>
+{% endblock content %}

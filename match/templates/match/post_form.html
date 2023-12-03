@@ -1,3 +1,6 @@
+{% extends 'main.html' %}
+
+{% block content%}
 <form action="{% url 'match:confirm' %}" method="POST">
   {% csrf_token %}
   <fieldset>
@@ -22,3 +25,4 @@
       <button type="submit">Write!</button>
   </fieldset>
 </form>
+{% endblock content %}

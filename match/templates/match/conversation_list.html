@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content%}
+<body>
+    <p>You are host</p>
+    {% for con in hosted_con %}
+        <hr>
+        <div>User: {{ con.counter }} {{ con.last_datetime|date:"Y.b.d P" }}  </div>
+        <a href="{% url 'match:conversation' post=con.match_post.id host=con.host_id guest=con.guest_id  %}">{{ con.last_message }}</a>
+    {% endfor %}
+    <hr>
+    <br>
+    <br>
+    <p>You are guest</p>
+    {% for con in guest_con %}
+        <hr>
+        <p>{{ con.counter }}</p>
+        <a href="{% url 'match:conversation' post=con.match_post.id host=con.host_id guest=con.guest_id  %}">{{ con.last_message }}</a>
+    {% endfor %}
+    <hr>
+</body>
+{% endblock content %}
