@@ -5,8 +5,8 @@ from django.db import models
 class User(AbstractUser):
     username = models.CharField(unique=True, max_length=50, null=True)
     email = models.EmailField(unique=True)
-    bio = models.TextField(null=True)
-    avatar = models.ImageField(null=True, default="image/avatar.svg")
+    bio = models.TextField(null=True, blank=True)
+    avatar = models.ImageField(null=True, default="sevage.jpeg")
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
@@ -35,7 +35,7 @@ class MatchPost(models.Model):
 
 
 class GameSpot(models.Model):
-    name = models.CharField(max_length=100, db_index=True)
+    name = models.CharField(max_length=100, db_index=True, unique=True)
     address = models.CharField(max_length=100, blank=True)
     description = models.TextField(blank=True)
 

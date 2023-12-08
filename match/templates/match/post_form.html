@@ -1,28 +1,68 @@
 {% extends 'main.html' %}
 
 {% block content%}
-<form action="{% url 'match:confirm' %}" method="POST">
-  {% csrf_token %}
-  <fieldset>
-      <label for="title">Title:</label><br>
-      <input type="text" id="title" name="title" value="제목을 입력하세요"><br>
-      <label for="game_date">Game date:</label><br>
-      <input type="date" id="game_date" name="game_date" value="ex) 2002-02-02"><br>
-      <label for="game_type">Game Type:</label><br>
-        <select id="game_type" name="game_type">
-          {% for game_type in game_types %}
-            <option value="{{ game_type }}">{{ game_type }}</option>
-          {% endfor %}
-        </select><br>
-      <label for="game_spot">Game Spot:</label><br>
-      <select id="game_spot" name="game_spot">
-          {% for place in places %}
-            <option value="{{ place }}">{{ place }}</option>
-          {% endfor %}
-      </select><br>
-      <label for="content">Comment:</label><br>
-      <input type="text" id="content" name="content" value="ex) 매너 좋은 분만요."><br>
-      <button type="submit">Write!</button>
-  </fieldset>
-</form>
+{#<form action="{% url 'match:confirm' %}" method="POST">#}
+<div class="layout__body">
+  <form class="form" action="" method="POST">
+      {% csrf_token %}
+      <div class="form__group">
+          <label for="matchpost_title">Enter a Title</label>
+          {{ form.title }}
+      </div>
+      <div class="form__group">
+          <label for="game_spot">Court</label>
+          {{ form.game_spot }}
+{#          <input required type="text" value="{{ form.game_spot.name }}" name="game_spot" list="spot_list">#}
+{#          <datalist id="spot_list">#}
+{#              <select id="game_spot">#}
+{#                  {% for place in places %}#}
+{#                      <option value="{{ place }}">{{ place }}</option>#}
+{#                  {% endfor %}#}
+{#              </select>#}
+{#          </datalist>#}
+      </div>
+      <div class="form__group">
+          <label for="matchpost_game_type">Game Type:</label>
+          {{ form.game_type }}
+      </div>
+      <div class="form__group">
+          <label for="matchpost_game_date">Date</label>
+          {{ form.game_date }}
+      </div>
+      <div class="form__group">
+          <label for="matchpost_content">Content</label>
+          {{ form.content }}
+      </div>
+      <div class="form__action">
+          <a class="btn btn--dark" href="{% url 'match:index' %}">Cancel</a>
+          <button class="btn btn--main" type="submit">Submit</button>
+      </div>
+
+  </form>
+</div>
+
+{#old version#}
+{##}
+{#  <fieldset>#}
+{#      <label for="title">Title:</label><br>#}
+{#      <input type="text" id="title" name="title" value="제목을 입력하세요"><br>#}
+{#      <label for="game_date">Game date:</label><br>#}
+{#      <input type="date" id="game_date" name="game_date" value="ex) 2002-02-02"><br>#}
+{#      <label for="game_type">Game Type:</label><br>#}
+{#        <select id="game_type" name="game_type">#}
+{#          {% for game_type in game_types %}#}
+{#            <option value="{{ game_type }}">{{ game_type }}</option>#}
+{#          {% endfor %}#}
+{#        </select><br>#}
+{#      <label for="game_spot">Game Spot:</label><br>#}
+{#      <select id="game_spot" name="game_spot">#}
+{#          {% for place in places %}#}
+{#            <option value="{{ place }}">{{ place }}</option>#}
+{#          {% endfor %}#}
+{#      </select><br>#}
+{#      <label for="content">Comment:</label><br>#}
+{#      <input type="text" id="content" name="content" value="ex) 매너 좋은 분만요."><br>#}
+{#      <button type="submit">Write!</button>#}
+{#  </fieldset>#}
+{#</form>#}
 {% endblock content %}

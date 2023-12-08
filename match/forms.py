@@ -1,7 +1,12 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import MatchPost, Message, User
+from .models import GameSpot, MatchPost, Message, User
+
+
+class MyModelChoiceField(forms.ModelChoiceField):
+    def label_from_instance(self, obj):
+        return "%s" % obj.name
 
 
 class PostForm(forms.ModelForm):
@@ -13,12 +18,9 @@ class PostForm(forms.ModelForm):
     game_type = forms.ChoiceField(choices=MatchPost.GameType.choices)
     game_date = forms.DateField(widget=forms.SelectDateWidget(
         attrs={'style': 'width: 300px;'}))
-    content = forms.CharField(max_length=200,
-                              widget=forms.TextInput(attrs={
-                                  'placeholder': 'title',
-                                  'style': 'width: 300px;'
-                              }))
-    game_spot = forms.CharField(max_length=100)
+    content = forms.TextInput()
+    game_spot = MyModelChoiceField(queryset=GameSpot.objects.all(),
+                                   to_field_name="name")
 
     class Meta:
         model = MatchPost

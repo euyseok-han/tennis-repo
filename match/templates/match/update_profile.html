@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
     <div class="layout__body">
-        <form class="form" action="" method="POST" enctype="multipart/form-data">
+        <form class="form" action="{% url 'match:update_user' %}" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           {% for field in form %}
           <div class="form__group">
@@ -10,10 +10,8 @@
           </div>
           {% endfor %}
 
-
-
           <div class="form__action">
-              <a class="btn btn--dark" href="{%url 'match:profile'%}">Cancel</a>
+              <a class="btn btn--dark" href="{% url 'match:profile' pk=form.instance.id %}">Cancel</a>
               <button class="btn btn--main" type="submit">Update</button>
           </div>
         </form>

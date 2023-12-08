@@ -64,8 +64,8 @@ a {
 
 /*========== components ==========*/
 .container {
-  max-width: 120rem;
-  width: 90%;
+  max-width: 1000rem;
+  width: 350%;
   margin: auto;
 }
 
@@ -901,7 +901,7 @@ a {
 .room,
 .participants {
   background: var(--color-dark);
-  max-height: 87.5vh;
+  max-height: 50vh;
   border-radius: 0.7rem;
   overflow: hidden;
   position: relative;
@@ -985,16 +985,16 @@ a {
 .room__box {
   padding-left: 2rem;
   padding-right: 2rem;
-  height: 80.5vh;
+  height: 50vh;
   /* overflow-y: auto; */
   padding-bottom: 0;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 3000px) {
   .room__box {
     padding-left: 2.5rem;
     padding-right: 2rem;
-    height: 80.5vh;
+    height: 50vh;
     overflow-y: auto;
     padding-bottom: 0;
   }
