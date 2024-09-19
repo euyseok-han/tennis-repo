@@ -55,6 +55,12 @@ body {
 img {
   width: 100%;
 }
+div.container2 {
+
+  max-width: 120rem;
+  width: auto;
+  margin: auto;
+}
 
 a {
   display: inline-block;
@@ -64,8 +70,8 @@ a {
 
 /*========== components ==========*/
 .container {
-  max-width: 1000rem;
-  width: 350%;
+  max-width: 120rem;
+  width: auto;
   margin: auto;
 }
 
@@ -907,7 +913,7 @@ a {
   position: relative;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1500px) {
   .participants {
     display: none;
   }
@@ -955,6 +961,7 @@ a {
 }
 
 .room__topRight {
+  width: 80%
   display: flex;
   column-gap: 1em;
 }

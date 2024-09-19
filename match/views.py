@@ -13,7 +13,7 @@ from django.views import generic
 
 from .forms import MessageForm, MyUserCreationForm, PostForm, UserForm
 from .models import Conversation, GameSpot, MatchPost, Message, User
-
+from django.core.paginator import Paginator
 # class IndexView(generic.ListView):
 #     template_name = 'match/index.html'
 #     context_object_name = "post_list"
@@ -22,7 +22,6 @@ from .models import Conversation, GameSpot, MatchPost, Message, User
 #         return MatchPost.objects.filter(
 #             game_date__gte=datetime.date.today()).order_by('game_date')
 
-
 def index(request):
     q = request.GET.get('q') or 'all'
     spot_filter = Q(game_spot__name=q) if q != 'all' else Q()
@@ -30,9 +29,14 @@ def index(request):
     query = MatchPost.objects.filter(
         Q(game_date__gte=datetime.date.today())
         & spot_filter).order_by('game_date')
+    paginator = Paginator(query, 2)
+    page_number = request.GET.get("page", 1)
+    page_obj = paginator.get_page(page_number)
     return render(request, 'match/index.html', {
-        "post_list": query,
-        "spots": spots
+        "post_list": page_obj,
+        "spots": spots,
+        "page_obj": page_obj,
+
     })
 
 
