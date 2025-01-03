@@ -5,7 +5,9 @@ Smash is a web application designed to connect tennis enthusiasts with potential
 ## Features
 
 - **User Registration**: Sign up to join the Smash community and create a personalized profile.
+- **Log-In**: Securely log in to access your profile, create posts, and engage with the community.
 - **Post Creation**: Create posts to find tennis partners based on your preferences such as skill level, availability, and location.
+- **Post Search**: Search through posts using filters like skill level, availability, and location to find the perfect match.
 - **Commenting System**: Engage with other users by commenting on their posts to coordinate games and build connections.
 
 ---
@@ -18,7 +20,7 @@ Smash is a web application designed to connect tennis enthusiasts with potential
 - **CSS**
 
 ### Framework
-- **Django**: A robust full-stack web framework for building scalable and maintainable web applications.
+- **Django**: A full-stack web framework for building scalable and maintainable web applications.
 
 ### Database
 - **PostgreSQL**: A powerful, open-source object-relational database for managing data efficiently.
@@ -28,20 +30,8 @@ Smash is a web application designed to connect tennis enthusiasts with potential
 
 ---
 
-## Setup Instructions
-
-Follow these steps to set up the project locally:
-
 ### Prerequisites
 
 - Python 3.x installed on your machine
-- PostgreSQL installed and running
 - Git installed
 
-### Steps
-
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/your-username/smash-tennis-matchmaking.git
-   cd smash-tennis-matchmaking
