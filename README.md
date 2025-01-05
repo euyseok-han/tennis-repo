@@ -8,7 +8,7 @@ Smash is a web application designed to connect tennis enthusiasts with potential
 - **Log-In**: Securely log in to access your profile, create posts, and engage with the community.
 - **Post Creation**: Create posts to find tennis partners based on your preferences such as skill level, availability, and location.
 - **Post Search**: Search through posts using filters like skill level, availability, and location to find the perfect match.
-- **Commenting System**: Engage with other users by commenting on their posts to coordinate games and build connections.
+- **Messaging System**: Engage with other users by messaging to coordinate games and build connections.
 
 ---
 
